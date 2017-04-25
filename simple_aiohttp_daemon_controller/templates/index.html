@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Daemon Controller</title>
+    <script src="{{ app.router.static.url(filename='js/index.js') }}"></script>
+</head>
+<body>
+    <h3>{{ service|upper }} SERVICE</h3>
+    <input type="checkbox" id="turn_on"><label for="turn_on">Turn on service</label><br>
+    <p>Status:  <span id="status">{{ status }}</span></p>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+    <button id="restart">Restart</button>
+</body>
+</html>
