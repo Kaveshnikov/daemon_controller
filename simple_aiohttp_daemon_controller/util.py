@@ -1,5 +1,6 @@
 import subprocess
 import logging
+import os
 
 PROCESS = '/bin/bash'
 
@@ -29,3 +30,20 @@ def getData(request):
         logging.error('Empty POST')
 
     return data
+
+
+'''Читает из файла и возвращает состояние флага '''
+def getFlag(file):
+    try:
+        file = open(file, 'r')
+    except IOError as ex:
+        return False
+    else:
+        with file:
+            flag = file.readline()
+            if flag == 'true':
+                return True
+            elif flag == 'false':
+                return False
+            else:
+                return None

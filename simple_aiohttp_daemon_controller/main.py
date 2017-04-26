@@ -10,6 +10,7 @@ from aiohttp import web
 from util import getStatus
 from util import execute
 from util import getData
+from util import getFlag
 
 project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -21,10 +22,12 @@ sys.path.append(project_root)
 async def index(request):
     status = getStatus(SERVICE)
     service = SERVICE.decode('utf-8')
+    condition = getFlag(CONDITION)
 
     return {
         'service': service,
-        'status': status
+        'status': status,
+        'condition': condition
     }
 
 '''Обработчик команд'''

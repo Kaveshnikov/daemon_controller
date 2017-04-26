@@ -26,6 +26,19 @@ window.onload = function () {
 
         turn_on(ev.currentTarget.checked);
     };
+
+    var hCondition = document.getElementById('condition');
+    var condition = hCondition.innerHTML;
+
+    if (condition === 'True') {
+        bStart.disabled = bStop.disabled = bRestart.disabled = false;
+        cTurn_on.checked = true;
+    }else {
+        bStart.disabled = bStop.disabled = bRestart.disabled = true;
+        cTurn_on.checked = false;
+    }
+
+
 };
 
 //Выполняет запрос на выполнение команды
